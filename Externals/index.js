@@ -17,6 +17,10 @@ app.get('/game-of-thrones/json',(req,res)=>{
 
 
 
-// axios.get("https://thronesapi.com/api/v2/Characters")
-//     .then(response => console.log(response.data))
-
+app.get('/games-of-thrones/url',(req,res)=>{
+    axios.get("https://thronesapi.com/api/v2/Characters")
+        .then(response => {
+            console.log(response.data)
+            return res.json(response.data)
+        })
+})
