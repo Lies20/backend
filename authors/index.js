@@ -33,6 +33,8 @@ app.get('/',(req,res)=>{
     res.send(authors)
 })
 
-app.get('/authors/1',(req,res)=>{
-    res.send(authors[0].name)
+app.get('/authors/:id',(req,res)=>{
+    var id = req.params.id;
+    res.send(authors[id].name)
+
 })
