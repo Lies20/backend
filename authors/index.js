@@ -33,15 +33,24 @@ app.get('/',(req,res)=>{
     res.send(authors)
 })
 
+app.get('/authors/:id',(req,res)=>{
+    var id = req.params.id
+    res.json({
+        name:authors[id].name,
+        nationality:authors[id].nationality
+    })
+
+})
+
 app.get('/authors/:id/books',(req,res)=>{
     var id = req.params.id
     res.send(authors[id].books)
 })
 
 
-app.get('/authors/:id',(req,res)=>{
-    var id = req.params.id;
-    res.send(authors[id].name)
+// app.get('/authors/:id',(req,res)=>{
+//     var id = req.params.id;
+//     res.send(authors[id].name)
 
-})
+// })
 
